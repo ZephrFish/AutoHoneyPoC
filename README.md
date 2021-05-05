@@ -10,3 +10,9 @@ AutoPoC Generator HoneyPoC ULTIMATE EDITION
 3. Stage 2b: Email User alert that new repo has been created, document the Repo Link, CVEID and CanaryToken ID
 4. Stage 2c: Create Pastebin Entry with git repo name and CVE information
 5. Stage 3: Build PoC From Templates, input the CVE and CanaryID to the specific PoC
+
+### Locations for Stuff
+
+- Canary Token: https://EXAMPLE.canary.tools/nest/
+- Github: https://github.com/USER/CVE-X.git
+- Pastebin: https://pastebin.com/jfFvX9TJ
