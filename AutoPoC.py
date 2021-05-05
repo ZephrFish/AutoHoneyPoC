@@ -98,16 +98,16 @@ def CreateGitRepo(RepoName):
     data = {
         'name': RepoName    
     }
-    r=requests.post('https://api.github.com/user/repos', json=data, auth=('GoogleProjectZer0', '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'))
+    r=requests.post('https://api.github.com/user/repos', json=data, auth=('USERNAME', 'KEY'))
     os.system('git commit -m "Initial Commit"')
     os.system('git branch -M main')
-    os.system(f'git remote add origin https://GoogleProjectZer0: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@github.com/GoogleProjectZer0/{RepoName}.git')
+    os.system(f'git remote add origin https://USERNAME:KEY@github.com/USERNAME/{RepoName}.git')
     os.system('git push -u origin main')
 
 
 # Stage 2b: Create Pastebin Entry with git repo name and CVE information
 def pastecreate(RepoName):
-    RepoID = f'https://github.com/GoogleProjectZer0/{RepoName}.git'
+    RepoID = f'https://github.com/USERNAME/{RepoName}.git'
     data = {
         'api_dev_key': 'KEY',
         'api_paste_code': f'New PoC Published for {RepoName} located at {RepoID} ',
