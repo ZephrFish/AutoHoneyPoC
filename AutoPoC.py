@@ -6,7 +6,8 @@
 # 1. Stage 1: Poll CVEs from Database URL and then drop them into a list to itterate through and create canary tokens for each CVE
 # 2. Stage 2a: Create Git Repo and Push updates to Repo
 # 3. Stage 2b: Email User alert that new repo has been created, document the Repo Link, CVEID and CanaryToken ID
-# 3. Stage 2c: Build PoC From Templates, input the CVE and CanaryID to the specific PoC
+# 4. Stage 2c: Create Pastebin Entry with git repo name and CVE information
+# 5. Stage 3: Build PoC From Templates, input the CVE and CanaryID to the specific PoC
 #
 # Tooling Used
 # CVE Search: https://github.com/barnumbirr/ares
@@ -27,11 +28,34 @@ WD = os.path.dirname(os.path.realpath(__file__))
 # Builds Requests Cache with DB called TrollList - Does Monkey Patching of requests
 requests_cache.install_cache(os.path.join(WD, "TrollList"), expire_after=3600)
 
+def banner():
+    print("""
+    
+ __    __                                          _______              ______
+|  \  |  \                                        |       \            /      \
+| $$  | $$  ______   _______    ______   __    __ | $$$$$$$\  ______  |  $$$$$$\
+| $$__| $$ /      \ |       \  /      \ |  \  |  \| $$__/ $$ /      \ | $$   \$$
+| $$    $$|  $$$$$$\| $$$$$$$\|  $$$$$$\| $$  | $$| $$    $$|  $$$$$$\| $$
+| $$$$$$$$| $$  | $$| $$  | $$| $$    $$| $$  | $$| $$$$$$$ | $$  | $$| $$   __
+| $$  | $$| $$__/ $$| $$  | $$| $$$$$$$$| $$__/ $$| $$      | $$__/ $$| $$__/  \
+| $$  | $$ \$$    $$| $$  | $$ \$$     \ \$$    $$| $$       \$$    $$ \$$    $$
+ \$$   \$$  \$$$$$$  \$$   \$$  \$$$$$$$ _\$$$$$$$ \$$        \$$$$$$   \$$$$$$
+                                        |  \__| $$
+                                         \$$    $$
+                                          \$$$$$$
+
+
+
+Automated Fuckery Ultimate Edition
+Research Project 
+Enjoy!
+    """)
+
 # Stage 1: Poll CVEs from Database URL and then drop them into a list to itterate through and create canary tokens for each CVE
 def PollCVEs():
     cveSer = CVESearch()
     # Grab last CVE number
-    CVEList = cveSer.last('2')
+    CVEList = cveSer.last('1')
     
  
     # Print out Last output
@@ -47,11 +71,11 @@ def PollCVEs():
 
     for CVEID in CVEList:
        data = {
-           'auth_token': 'CANARYAUTHTOKEN',
+           'auth_token': 'KEY',
            'memo': CVEID['id'],
            'kind': 'http'
            }
-       response = requests.post('https://CANARYDOMAIN.canary.tools/api/v1/canarytoken/create', data=data)
+       response = requests.post('https://SUBDOMAIN.canary.tools/api/v1/canarytoken/create', data=data)
        canaryurl = response.json()['canarytoken']['url']
        
        pair = CVECanaryPair(id=CVEID['id'],url=canaryurl)
@@ -74,22 +98,37 @@ def CreateGitRepo(RepoName):
     data = {
         'name': RepoName    
     }
-    r=requests.post('https://api.github.com/user/repos', json=data, auth=('GITUSER', 'GITTOKEN'))
+    r=requests.post('https://api.github.com/user/repos', json=data, auth=('GoogleProjectZer0', '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'))
     os.system('git commit -m "Initial Commit"')
     os.system('git branch -M main')
-    os.system(f'git remote add origin https://GITUSER:GITTOKEN@github.com/GITUSER/{RepoName}.git')
+    os.system(f'git remote add origin https://GoogleProjectZer0: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@github.com/GoogleProjectZer0/{RepoName}.git')
     os.system('git push -u origin main')
 
-# Stage 2b: Email User alert that new repo has been created, document the Repo Link, CVEID and CanaryToken ID
-def EmailUser(RepoName):
+
+# Stage 2b: Create Pastebin Entry with git repo name and CVE information
+def pastecreate(RepoName):
+    RepoID = f'https://github.com/GoogleProjectZer0/{RepoName}.git'
+    data = {
+        'api_dev_key': 'KEY',
+        'api_paste_code': f'New PoC Published for {RepoName} located at {RepoID} ',
+        'api_option': 'paste'
+        }
+    r=requests.post('https://pastebin.com/api/api_post.php', data=data)
+    pasteurl = r.content
+    print(r.content)
+
+    return pasteurl
+
+# Stage 2c: Email User alert that new repo has been created, document the Repo Link, CVEID and CanaryToken ID
+def EmailUser(RepoName, pasteurl):
     # Change this to free form
-    TO = 'RECIPIENT'
+    TO = 'RECIPIENT@example.com'
     SUBJECT = f'CVE Mailer {RepoName}'
-    TEXT = f'New Github Repo Created for {RepoName}'    
+    TEXT = f'New Github Repo Created for {RepoName} and a pastebin link has also been created {pasteurl}'    
     # Email Sign In
-    sender = 'SENDER@EXAMPLE.COM'
+    sender = 'SENDER@example.com'
     password = 'PASSWORD' 
-    server = smtplib.SMTP('mail.example.com', 587)
+    server = smtplib.SMTP('MAILSERVER.example.com', 587)
     server.ehlo()
     server.starttls()
     server.login(sender, password)  
@@ -99,18 +138,19 @@ def EmailUser(RepoName):
                         '', TEXT])  
     try:
         server.sendmail(sender, [TO], BODY)
-        print ('Email Sent to ' + TO)
+        print (f'Email Sent to {TO}')
     except:
-        print ('error sending mail')    
+        print (f'Error Sending Mail to {TO}')    
     server.quit()
 
-# Stage 2c: Build PoC From Templates, input the CVE and CanaryID to the specific PoC
+# Stage 3: Build PoC From Templates, input the CVE and CanaryID to the specific PoC
 def BuildPoC(canaryurllist):
     for id, url in canaryurllist:
         global WD
         repo_path = os.path.join(WD, id)
         if not os.path.exists(repo_path):
             os.makedirs(repo_path)
+
         # Makes a folder with the exploit code inside it
         with open(os.path.join(repo_path,f'{id}.sh'),'w+') as f:
             f.write(f'''# {id} PoC
@@ -129,8 +169,17 @@ if [ $# -eq 0 ]; then
         echo "$USAGE"
         exit
 fi
+
+if [[ $USER != "root" ]] ; then
+                echo "Please Note: This script must be run as root or with sudo!"
+                exit 1
+        fi
+
 echo "[!] Exploiting Host $1"
 curl -s --output=/dev/null {url} 
+echo "[+] Execution complete against $1"
+echo "[!] Session 1 opened!"
+echo "#>   "
 ''')
         # Makes a folder with the README.md code inside it
         with open(os.path.join(repo_path,'README.md'),'w+') as f:
@@ -142,14 +191,19 @@ Achieves exploitation of {id}
 ```
  chmod +x {id}.sh
 
- ./{id}.sh -c <TargetIP>
- ./{id}.sh -l <ListoFIPs>
+ sudo ./{id}.sh -c <TargetIP>
+ sudo ./{id}.sh -l <ListoFIPs>
 ```''')
         CreateGitRepo(id)
+        pastecreate(id)
         EmailUser(id)
 
 
 #EmailUser()
 #
 if __name__ == '__main__':
+    banner()
+    print("Version: ", version)
+
+    # Input the values from Polling the CVEs
     BuildPoC(PollCVEs())
