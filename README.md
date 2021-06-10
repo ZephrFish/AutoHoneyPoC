@@ -65,3 +65,11 @@ To https://github.com/example/CVE-2021-23388.git
 - Canary Token: https://EXAMPLE.canary.tools/nest/
 - Github: https://github.com/USER/CVE-X.git
 - Pastebin: https://pastebin.com/randomstring
+
+
+
+# Talk Ideas
+
+## CTI Information
+## Adding to the Joke aspect and profile
+### Sandbox Profiling
