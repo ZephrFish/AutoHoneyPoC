@@ -69,6 +69,7 @@ To https://github.com/example/CVE-2021-23388.git
 
 
 # Talk Ideas
+When in Doubt: Fuck Around Get Found Out
 
 ## CTI Information
 ## Adding to the Joke aspect and profile
