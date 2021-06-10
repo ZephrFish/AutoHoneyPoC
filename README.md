@@ -66,7 +66,16 @@ To https://github.com/example/CVE-2021-23388.git
 - Github: https://github.com/USER/CVE-X.git
 - Pastebin: https://pastebin.com/randomstring
 
+### TODO Pipeline
+#### Argparse
+-  -a : int for amount of CVEs
+-  -d : debug, set default to false 
+-  -s : Specific phrase search in ares CVE_Search lib - to read
+-  -v : Turn on verbose output
 
+#### More Functions
+- Slack notifier
+- Discord notifier
 
 # Talk Ideas
 When in Doubt: Fuck Around Get Found Out
