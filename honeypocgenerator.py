@@ -62,7 +62,7 @@ global target_string_canaryUrl
 global PWD
 
 cvss = 1
-amount = "5"
+amount = "510"
 # Does not work at the moment
 debugging = True
 
