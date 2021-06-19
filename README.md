@@ -74,7 +74,7 @@ To https://github.com/example/CVE-2021-23388.git
 -  -v : Turn on verbose output
 
 #### More Functions
-- Slack notifier
+- Slack notifier - technically implemented via canary tokens
 - Discord notifier
 
 # Talk Ideas
