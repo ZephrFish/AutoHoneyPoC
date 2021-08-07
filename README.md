@@ -2,7 +2,7 @@
 AutoPoC Generator HoneyPoC ULTIMATE EDITION
 
 ## Usage:
-`python3 honeypocgenerator.py`
+`python3 autopoc.py`
 
 ## Example Output
 ```
@@ -41,7 +41,7 @@ To https://github.com/example/CVE-2021-23388.git
  + b96f2b3...b7115c3 main -> main (forced update)
 ```
 
-## Requirements in terms of Creds:
+## Requirements in terms of Creds (.creds.env):
 - CVE_SEARCH : The search term for type of CVE to search for and generate
 - CANARY_AUTH_TOKEN : CanaryTokens API Key
 - CANARY_API_URL : Unique canary API url blah.canary.tools
@@ -60,11 +60,15 @@ To https://github.com/example/CVE-2021-23388.git
 4. Stage 2c: Create Pastebin Entry with git repo name and CVE information
 5. Stage 3: Build PoC From Templates, input the CVE and CanaryID to the specific PoC
 
-### Locations for Stuff
+## Locations for Stuff
 
 - Canary Token: https://EXAMPLE.canary.tools/nest/
 - Github: https://github.com/USER/CVE-X.git
 - Pastebin: https://pastebin.com/randomstring
+
+## Thanks
+- https://twitter.com/BufferOfStyx
+- https://twitter.com/GossiTheDog
 
 ### TODO Pipeline
 #### Argparse
@@ -76,10 +80,17 @@ To https://github.com/example/CVE-2021-23388.git
 #### More Functions
 - Slack notifier - technically implemented via canary tokens
 - Discord notifier
+- Start to build dashboard of accounts destroyed on git and work out where/when created/deleted
 
 # Talk Ideas
-When in Doubt: Fuck Around Get Found Out
+- When in Doubt: Fuck Around Get Found Out
+- Disinformation As A Service: F Around, Get Found Out
 
-## CTI Information
-## Adding to the Joke aspect and profile
+## Information + data 
+- Gathering where the CVE details get dropped
+- Gather data around executions and mapping
+
+
+# What the Binary / Payload does
+- TODO: Adding to the Joke aspect and profile
 
