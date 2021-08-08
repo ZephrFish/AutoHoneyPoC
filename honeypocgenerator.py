@@ -2,6 +2,8 @@
 
 # Imports for various functions within src, additional libs are imported per function
 import json
+# Version 2.0 - Adding in arguments
+import argparse
 import hashlib
 import argparse
 import sys
@@ -61,10 +63,35 @@ global target_string_cve
 global target_string_canaryUrl
 global PWD
 
+# Arguments
+'''
+# Argument Parsing
+~ Description : The functions below are used for argument parsing
+Args:
+-a : int for amount of CVEs
+-d : debug, set default to false
+-s : Specific phrase search in ares CVE_Search lib - to read
+-v : Turn on verbose output
+'''
+
+parser = argparse.ArgumentParser(
+    description='AutoPoC Tooling',
+    prog="autopoc.py",
+    usage='%(prog)s [options]'
+)
+
+# Arguments
+parser.add_argument('-a', action='store', dest='CVEAmount', default='5', help='Number of CVEs to request, defaults to 5')
+# parser.add_argument('-d', action='store', dest='DebugMode', default=None, help='turn on debug')
+# parser.add_argument('-s', action='store', dest='CVESearch', default=None, help='Specific phrase search in ares CVE_Search lib')
+# parser.add_argument('-v', action='store', dest='Verbose', default=None, help='turn on verbose mode')
+
+args = parser.parse_args()
+
 cvss = 1
-amount = "15"
+amount = args.CVEAmount
 # Does not work at the moment
-debugging = True
+# debugging = True
 
 PWD = os.path.dirname(os.path.realpath(__file__))
 
@@ -137,5 +164,7 @@ def main():
 	print("[*] Removing files...")
 
 if __name__ == "__main__":
-	main()
+	
 
+
+	main()
