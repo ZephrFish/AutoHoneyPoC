@@ -1,7 +1,7 @@
 # AutoHoneyPoC
 AutoPoC Generator HoneyPoC ULTIMATE EDITION
 
-Sister Project: (SandboxSpy)[https://github.com/ZephrFish/SandboxSpy]
+Sister Project: [SandboxSpy](https://github.com/ZephrFish/SandboxSpy)
 
 ## Usage:
 `python3 autopoc.py`
