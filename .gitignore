@@ -7,9 +7,6 @@ src/__pycache__/getCVEs.cpython-39.pyc
 src/create_functions/__pycache__/create_directory.cpython-39.pyc
 src/create_functions/__pycache__/create_payload.cpython-39.pyc
 src/create_functions/__pycache__/create_readme.cpython-39.pyc
-src/create_functions/create_directory.py
-src/create_functions/create_payload.py
-src/create_functions/create_readme.py
 src/functions/__pycache__/compileGo.cpython-39.pyc
 src/functions/__pycache__/create_directory.cpython-39.pyc
 src/functions/__pycache__/create_payload.cpython-39.pyc
