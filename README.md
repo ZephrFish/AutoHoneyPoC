@@ -67,11 +67,12 @@ To https://github.com/example/CVE-2021-23388.git
 - Pastebin: https://pastebin.com/randomstring
 
 ## Thanks
-- https://twitter.com/BufferOfStyx
-- https://twitter.com/GossiTheDog
+- https://twitter.com/BufferOfStyx - Helped with modularization
+- https://twitter.com/GossiTheDog - Initial funding of DO VPS for fuckery
+- https://twitter.com/0x616e6874 - Helped with streamlining code
 
 ### TODO Pipeline
-#### Argparse
+#### Argparse - Got int working, need to factor in CVE search and debug/verbose mode.
 -  -a : int for amount of CVEs
 -  -d : debug, set default to false 
 -  -s : Specific phrase search in ares CVE_Search lib - to read
