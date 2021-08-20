@@ -89,6 +89,8 @@ To https://github.com/example/CVE-2021-23388.git
 - When in Doubt: Fuck Around Get Found Out
 - Disinformation As A Service: F Around, Get Found Out
 
+Fuck Around & Get Found Out: Disinformation As A Service
+
 ## Information + data 
 - Gathering where the CVE details get dropped
 - Gather data around executions and mapping
