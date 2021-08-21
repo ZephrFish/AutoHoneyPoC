@@ -30,6 +30,9 @@ This was a particularly "amusing" troll because the sort of people who keep up w
 
 ## Lessons Learned
 ### Future Plans
+### Threat Actors
+#### TTPs Generated
+#### Detecting AutoPoC
 ### SandBoxSpy & Stage 0 implants
 
-## Conclusion
+## Conclusion
