@@ -35,6 +35,14 @@ This was a particularly "amusing" troll because the sort of people who keep up w
 
 ## Stats from X months and information learned
 
+### The Data breakdown 
+- Total POCS Generated
+- Total Amount of Github Accounts
+- Total runs
+- Breakdown by CVE
+- Breakdown by Geolocation
+- Interesting locations
+
 ## Lessons Learned
 ### Future Plans
 ### Threat Actors
