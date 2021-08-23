@@ -34,6 +34,8 @@ This was a particularly "amusing" troll because the sort of people who keep up w
 ### Explaining structure - how it works
 
 ## Stats from X months and information learned
+- https://ipinfo.io/map
+- https://ipinfo.io/tools/summarize-ips
 
 ### The Data breakdown 
 - Total POCS Generated
