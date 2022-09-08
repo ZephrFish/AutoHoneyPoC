@@ -95,7 +95,3 @@ Fuck Around & Get Found Out: Disinformation As A Service
 - Gathering where the CVE details get dropped
 - Gather data around executions and mapping
 
-
-# What the Binary / Payload does
-- TODO: Adding to the Joke aspect and profile
-
