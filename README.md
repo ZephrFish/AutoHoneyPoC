@@ -1,5 +1,7 @@
 # AutoHoneyPoC
-AutoPoC Generator HoneyPoC ULTIMATE EDITION
+AutoPoC Generator HoneyPoC ultimate edition.
+
+**While I'm releasing AutoPoC, the framework on its own is harmless as it requires some pre-requisites to build the automated backend, but the outputted code is technically malware so be careful what you do with it and it's for educational purposes etc, I'm not liable if you use it for crime or other chaos.**
 
 Sister Project: [SandboxSpy](https://github.com/ZephrFish/SandboxSpy)
 
@@ -69,27 +71,13 @@ To https://github.com/example/CVE-2021-23388.git
 - Pastebin: https://pastebin.com/randomstring
 
 ## Thanks
-- https://twitter.com/BufferOfStyx - Helped with modularization
-- https://twitter.com/GossiTheDog - Initial funding of DO VPS for fuckery
-- https://twitter.com/0x616e6874 - Helped with streamlining code
-
-### TODO Pipeline
-#### Argparse - Got int working, need to factor in CVE search and debug/verbose mode.
--  -a : int for amount of CVEs
--  -d : debug, set default to false 
--  -s : Specific phrase search in ares CVE_Search lib - to read
--  -v : Turn on verbose output
+- https://twitter.com/BufferOfStyx - Helped with modularization of some of the code, also helped with initial brainstorming ideas
+- https://twitter.com/0x616e6874 - Helped with streamlining code, also helped with initial brainstorming ideas
 
 #### More Functions
-- Slack notifier - technically implemented via canary tokens
+- Slack notifier - technically implemented via canary tokens but a webhook URL/method is a WIP
 - Discord notifier
 - Start to build dashboard of accounts destroyed on git and work out where/when created/deleted
-
-# Talk Ideas
-- When in Doubt: Fuck Around Get Found Out
-- Disinformation As A Service: F Around, Get Found Out
-
-Fuck Around & Get Found Out: Disinformation As A Service
 
 ## Information + data 
 - Gathering where the CVE details get dropped
