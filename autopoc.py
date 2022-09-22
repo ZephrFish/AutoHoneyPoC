@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# AutoPoC baseline script
+# ZephrFish 2022 update
 
 # Imports for various functions within src, additional libs are imported per function
 import json
@@ -45,6 +47,7 @@ from src.template_edit_functions.open_close_write_Template import open_template,
 from src.template_edit_functions.write_Readme import write_readme
 
 # Colours
+# Not all of these will get used but I like this block of code I borrowed from some stack overflow thread
 def prRed(skk): print("\033[91m {}\033[00m" .format(skk))
 def prGreen(skk): print("\033[92m {}\033[00m" .format(skk))
 def prYellow(skk): print("\033[93m {}\033[00m" .format(skk))
