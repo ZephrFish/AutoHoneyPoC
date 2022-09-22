@@ -75,7 +75,7 @@ To https://github.com/example/CVE-2021-23388.git
 
 ## Thanks
 - https://twitter.com/BufferOfStyx - Helped with modularization of some of the code, also helped with initial brainstorming ideas
-- https://twitter.com/0x616e6874 - Helped with streamlining code, also helped with initial brainstorming ideas
+
 
 #### More Functions
 - Slack notifier - technically implemented via canary tokens but a webhook URL/method is a WIP
