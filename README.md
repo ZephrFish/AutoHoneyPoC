@@ -6,6 +6,8 @@ AutoPoC Generator HoneyPoC ultimate edition.
 
 **While I'm releasing AutoPoC, the framework on its own is harmless as it requires some pre-requisites to build the automated backend, but the outputted code is technically malware so be careful what you do with it and it's for educational purposes etc, I'm not liable if you use it for crime or other chaos.**
 
+All accounts in the commit history where you might see creds have either been flagged by github as malicious or flattened ;).
+
 Sister Project: [SandboxSpy](https://github.com/ZephrFish/SandboxSpy)
 
 ## Usage:
