@@ -1,6 +1,9 @@
 # AutoHoneyPoC
 AutoPoC Generator HoneyPoC ultimate edition.
 
+![image](https://user-images.githubusercontent.com/5783068/191644772-d45817d5-00ff-49af-b874-38d09055a72b.png)
+
+
 **While I'm releasing AutoPoC, the framework on its own is harmless as it requires some pre-requisites to build the automated backend, but the outputted code is technically malware so be careful what you do with it and it's for educational purposes etc, I'm not liable if you use it for crime or other chaos.**
 
 Sister Project: [SandboxSpy](https://github.com/ZephrFish/SandboxSpy)
