@@ -88,3 +88,45 @@ To https://github.com/example/CVE-2021-23388.git
 - Gathering where the CVE details get dropped
 - Gather data around executions and mapping
 
+
+## Detection and Response
+I'm not a blue teamer or detection engineer by trade, however, the Yara rules before are my attempt at some detection for the domains and binaries being executed historically within your environment.
+
+```
+rule HoneyPoC_URLDetect {
+
+meta:
+description = "HoneyPoC AutoPoC URL detection"
+author = "Andy Gill"
+reference = "blog.zsec.uk/honeypoc-ultimate/"
+date = "2021/11/13"
+hash = "b6807027ac171252cf47eb28454c044644352c9f2fabd65d3f23075a0e395768"
+
+strings:
+ $a = "honeypoc.io" nocase
+ $b = "canarytokens.com" nocase
+ $c = "givemeyourpasswords.ninja" nocase
+ 
+ condition:
+    $a or $b or $c
+ }
+```
+The following yara rule can be used with something like PasteHunter to search for specific strings in Pastebin links.
+
+```
+rule HoneyPoC_Pastebin
+{
+    meta:
+    description = "HoneyPoC AutoPoC Pastebin detection"
+    author = "Andy Gill"
+    reference = "blog.zsec.uk/honeypoc-ultimate/"
+    date = "2021/11/13"
+
+    strings:
+        $a = "New PoC Published for" nocase wide ascii fullword
+
+
+    condition:
+        $a
+}
+```
