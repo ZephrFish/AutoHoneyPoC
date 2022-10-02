@@ -1,6 +1,8 @@
 # AutoHoneyPoC
 AutoPoC Generator HoneyPoC ultimate edition.
 
+If this is the first time you've heard of or seen the project you'll probably want to read the blog post on it. https://blog.zsec.uk/honeypoc-ultimate/
+
 ![image](https://user-images.githubusercontent.com/5783068/191644772-d45817d5-00ff-49af-b874-38d09055a72b.png)
 
 
