@@ -1,14 +1,14 @@
 # AutoHoneyPoC
 AutoPoC Generator HoneyPoC ultimate edition.
 
-If this is the first time you've heard of or seen the project you'll probably want to read the blog post on it. https://blog.zsec.uk/honeypoc-ultimate/
+If this is the first time you've heard of or seen the project, you'll want to read the blog post. https://blog.zsec.uk/honeypoc-ultimate/
 
 ![image](https://user-images.githubusercontent.com/5783068/191644772-d45817d5-00ff-49af-b874-38d09055a72b.png)
 
 
-**While I'm releasing AutoPoC, the framework on its own is harmless as it requires some pre-requisites to build the automated backend, but the outputted code is technically malware so be careful what you do with it and it's for educational purposes etc, I'm not liable if you use it for crime or other chaos.**
+**While I'm releasing AutoPoC, the framework on its own is harmless as it requires some pre-requisites to build the automated backend, but the outputted code is technically malware, so be careful what you do with it, and it's for educational purposes etc; I'm not liable if you use it for crime or other chaos.**
 
-All accounts in the commit history where you might see creds have either been flagged by github as malicious or flattened ;).
+All accounts in the commit history where you might see creds have either been flagged by GitHub as malicious or flattened ;).
 
 Sister Project: [SandboxSpy](https://github.com/ZephrFish/SandboxSpy)
 
@@ -65,10 +65,10 @@ To https://github.com/example/CVE-2021-23388.git
 - EMAIL_SERVER_PORT : Server port
 
 ###  What This Script Does:
-1. Stage 1: Poll CVEs from Database URL and then drop them into a list to itterate through and create canary tokens for each CVE
+1. Stage 1: Poll CVEs from the Database URL and then drop them into a list to iterate through and create canary tokens for each CVE
 2. Stage 2a: Create Git Repo and Push updates to Repo
 3. Stage 2b: Email User alert that new repo has been created, document the Repo Link, CVEID and CanaryToken ID
-4. Stage 2c: Create Pastebin Entry with git repo name and CVE information
+4. Stage 2c: Create a Pastebin Entry with the git repo name and CVE information
 5. Stage 3: Build PoC From Templates, input the CVE and CanaryID to the specific PoC
 
 ## Locations for Stuff
@@ -82,9 +82,9 @@ To https://github.com/example/CVE-2021-23388.git
 
 
 #### More Functions
-- Slack notifier - technically implemented via canary tokens but a webhook URL/method is a WIP
+- Slack notifier - technically implemented via canary tokens, but a webhook URL/method is a WIP
 - Discord notifier
-- Start to build dashboard of accounts destroyed on git and work out where/when created/deleted
+- Start to build a dashboard of accounts destroyed on git and work out where/when created/deleted
 
 ## Information + data 
 - Gathering where the CVE details get dropped
@@ -92,7 +92,7 @@ To https://github.com/example/CVE-2021-23388.git
 
 
 ## Detection and Response
-I'm not a blue teamer or detection engineer by trade, however, the Yara rules before are my attempt at some detection for the domains and binaries being executed historically within your environment.
+I'm not a blue teamer or detection engineer by trade; however, the Yara rules before are my attempt at some detection for the domains and binaries being executed historically within your environment.
 
 ```
 rule HoneyPoC_URLDetect {
