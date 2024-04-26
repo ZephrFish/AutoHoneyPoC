@@ -1,8 +1,7 @@
-from ares import CVESearch
 from collections import namedtuple
+
 import requests
-import requests_cache
-import json
+from ares import CVESearch
 
 
 def PollCVEs(CANARY_AUTH_TOKEN, CANARY_API_URL, amount, cvss):
