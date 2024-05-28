@@ -8,7 +8,7 @@
 -i https://pypi.org/simple
 #./ares
 certifi==2023.7.22
-chardet==4.0.0; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'
-idna==3.7; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'
-requests==2.32.0
-urllib3==1.26.6; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_version < '4'
+chardet
+idna
+requests
+urllib3
